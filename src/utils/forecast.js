@@ -12,7 +12,8 @@ const forecast = (lan, lon, callback) => {
             const temp = body.current.temperature
             const feels = body.current.feelslike
             const overall = body.current.weather_descriptions[0]
-            callback(undefined, overall + ". It is currently " + temp + " degrees out. It feels like " + feels + " degrees out")
+            const wind = body.current.wind_speed
+            callback(undefined, overall + ". It is currently " + temp + " degrees out. It feels like " + feels + " degrees out. There are wind speeds of " + wind)
         }
     })
 }
